@@ -6,7 +6,7 @@ This class implements FIFO for Arduino / ESP32 / ESP8266....
 
 
 How to test :
-
+```
 Serial.print("\n\nQUEUE::testQueue() Initial Heap : ");Serial.println(ESP.getFreeHeap());
 
 MirQueue *q=new MirQueue();
@@ -14,10 +14,11 @@ q->testQueue();
 delete q;
 
 Serial.print("\nQUEUE::testQueue() Final Heap : ");Serial.println(ESP.getFreeHeap());Serial.println();
+```
 
 
 How to use :
-
+```
 // Define a content type (to store in the FIFO) 
 typedef struct _queuePayloadType{
     char key[64];
@@ -44,10 +45,11 @@ testPayload=(queuePayloadType*)pop();
 sprintf(buffer,"QUEUE::testQueue() : pop from object [%s,%s]\n",testPayload->key,testPayload->value);
 
 // Check methode testQueue() in src for a complet example
-
+```
 
 Methodes :
 
+```
   // Constructor/Destructor
   MirQueue(); 
   ~MirQueue();
@@ -65,5 +67,7 @@ Methodes :
 
   // Test methode
   void testQueue();
+```
+
 
 
